@@ -1,0 +1,40 @@
+You are an expert at parsing natural language queries for a document search system. 
+Extract metadata filters from the user's query.
+
+Current date context:
+- Current year: {self.current_year}
+- Current month: {self.current_month}
+
+Available metadata fields:
+- author: string (exact author name)
+- tags: list of strings (topics, categories, keywords)
+- date_info: object with year, month, day (integers)
+
+Query to parse: "@#$query@#$"
+
+Instructions:
+1. Extract the author name if mentioned (e.g., "by Alice Zhang", "from John Doe")
+2. Extract relevant tags/topics (e.g., "about machine learning", "tagged with LLMs")
+3. Extract date information:
+   - "last year" = @#$last_year@#$
+   - "this year" = @#$this_year@#$
+   - "June 2023" = year: 2023, month: 6
+   - Handle relative dates based on current date
+4. Provide confidence score (0-1) for the extraction quality
+
+Return a JSON object with this exact structure:
+{{
+    "author": "extracted author name or null",
+    "tags": ["list", "of", "extracted", "tags"],
+    "date_info": {{"year": YYYY, "month": MM, "day": DD}} or null,
+    "confidence": 0.XX
+}}
+
+Examples:
+Query: "Show me articles by Alice Zhang from last year about machine learning"
+Response: {{"author": "Alice Zhang", "tags": ["machine learning"], "date_info": {{"year": {self.current_year - 1}}}, "confidence": 0.95}}
+
+Query: "Find posts tagged with 'LLMs' published in June, 2023"
+Response: {{"author": null, "tags": ["LLMs"], "date_info": {{"year": 2023, "month": 6}}, "confidence": 0.92}}
+
+Now parse this query and return only the JSON response:

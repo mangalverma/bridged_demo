@@ -1,0 +1,16 @@
+{
+  "query": "Show me articles by Alice Zhang from last year about machine learning.",
+  "filter": {
+    "author": "Alice Zhang",
+    "tags": {
+      "$in": [
+        "machine learning"
+      ]
+    },
+    "published_year": {
+      "$eq": 2024
+    }
+  },
+  "confidence": 0.95,
+  "timestamp": "2025-07-11T19:47:24.320305"
+}

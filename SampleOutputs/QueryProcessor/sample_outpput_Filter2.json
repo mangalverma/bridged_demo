@@ -1,0 +1,18 @@
+{
+  "query": "Find posts tagged with ‘LLMs’ published in June, 2023.",
+  "filter": {
+    "tags": {
+      "$in": [
+        "LLMs"
+      ]
+    },
+    "published_year": {
+      "$eq": 2023
+    },
+    "published_month": {
+      "$eq": 6
+    }
+  },
+  "confidence": 0.95,
+  "timestamp": "2025-07-11T15:26:27.663289"
+}

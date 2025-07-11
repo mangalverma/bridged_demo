@@ -1,0 +1,13 @@
+{
+  "query": "Anything by John Doe on vector search?",
+  "filter": {
+    "author": "John Doe",
+    "tags": {
+      "$in": [
+        "vector search"
+      ]
+    }
+  },
+  "confidence": 0.95,
+  "timestamp": "2025-07-11T15:28:09.811197"
+}

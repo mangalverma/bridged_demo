@@ -1,0 +1,6 @@
+prompt = f"""Use the following context to answer the question:
+
+@#$combined_context@#$
+
+Question: @#$query@#$
+Answer:"""
