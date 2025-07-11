@@ -62,13 +62,7 @@ async def root():
 
 @app.post("/query", response_model=QueryParsedResponse)
 async def process_query(request: QueryRequest):
-    """
-    process natural language query and return pinecone filter using AI
-    Args:
-        request: QueryRequest containing the natural language query
-    Returns:
-        QueryResponse with the generated filter and confidence score
-    """
+    
     try:
         agent = create_pinecone_agent(request.llm_provider)        
         # Process the query
@@ -84,13 +78,7 @@ async def process_query(request: QueryRequest):
 
 @app.post("/search_record", response_model=DocumentSearchResponse)
 async def search_record(request: PineconeRequest):
-    """
-    process natural language query and return pinecone filter using AI
-    Args:
-        request: QueryRequest containing the natural language query
-    Returns:
-        QueryResponse with the generated filter and confidence score
-    """
+   
     try:
         agent = create_pinecone_agent(request.llm_provider)        
         # Process the query
@@ -105,13 +93,7 @@ async def search_record(request: PineconeRequest):
 
 @app.post("/generate_rag_response", response_model=RAGResponse)
 async def generate_rag_response(request: PineconeRequest):
-    """
-    process natural language query and return pinecone filter using AI
-    Args:
-        request: QueryRequest containing the natural language query
-    Returns:
-        QueryResponse with the generated filter and confidence score
-    """
+    
     try:
         agent = create_pinecone_agent(request.llm_provider)        
         # Process the query
