@@ -114,4 +114,4 @@ Below are example screenshots demonstrating the API in action:
 ## Future Goals
 - **Support for More LLM Providers:** Plan to add additional LLM providers (e.g., OpenAI, Anthropic, etc.) in the `LLMProvider` directory for greater flexibility and capability.
 - **Summarization During Insertion:** Integrate LLM-based summarization during data insertion into Pinecone to store concise, focused summaries for improved search and RAG performance.
-
+- **Add Logging System:** Add Logger to track each step .
