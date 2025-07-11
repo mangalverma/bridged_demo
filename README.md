@@ -111,3 +111,7 @@ Below are example screenshots demonstrating the API in action:
 - Currently supports Google Gemini (see `LLMProvider/GeminiProvider.py`).
 - You may need to set up Google GenAI credentials depending on your environment.
 
+## Future Goals
+- **Support for More LLM Providers:** Plan to add additional LLM providers (e.g., OpenAI, Anthropic, etc.) in the `LLMProvider` directory for greater flexibility and capability.
+- **Summarization During Insertion:** Integrate LLM-based summarization during data insertion into Pinecone to store concise, focused summaries for improved search and RAG performance.
+
